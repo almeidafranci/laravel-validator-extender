@@ -20,8 +20,10 @@
         }
     },
     "extra": {
-        "providers": [
-            "AlmeidaFranci\\LaravelValidatorExtender\\ValidatorExtenderServiceProvider"
-        ]
+        "laravel": {
+            "providers": [
+                "AlmeidaFranci\\LaravelValidatorExtender\\ValidatorExtenderServiceProvider"
+            ]
+        }
     }
 }
