@@ -70,7 +70,7 @@ class ValidatorExtension
 
     public static function validateCpfOrCnpj(...$args)
     {
-        return $this->validateCpf($args) || $this->validateCnpj($args);
+        return self::validateCpf(...$args) || self::validateCnpj(...$args);
     }
 
     public static function validateZip($attribute, $value, $parameters, $validator)
