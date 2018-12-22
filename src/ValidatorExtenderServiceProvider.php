@@ -35,6 +35,12 @@ class ValidatorExtenderServiceProvider extends ServiceProvider
         );
 
         Validator::extend(
+            'cpf_or_cnpj',
+            self::VALIDATOR_CLASS.'@validateCpfOrCnpj',
+            'Invalid CPF or CNPJ'
+        );
+
+        Validator::extend(
             'zip',
             self::VALIDATOR_CLASS.'@validateZip',
             'ZIP code is invalid'

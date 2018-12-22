@@ -68,6 +68,11 @@ class ValidatorExtension
         return true;
     }
 
+    public static function validateCpfOrCnpj(...$args)
+    {
+        return $this->validateCpf($args) || $this->validateCnpj($args);
+    }
+
     public static function validateZip($attribute, $value, $parameters, $validator)
     {
         return preg_match('/^\d{5}-\d{3}$/', $value) === 1;
