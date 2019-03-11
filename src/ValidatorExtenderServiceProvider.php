@@ -45,6 +45,13 @@ class ValidatorExtenderServiceProvider extends ServiceProvider
             self::VALIDATOR_CLASS.'@validateZip',
             'ZIP code is invalid'
         );
+
+        Validator::extend(
+            'ip_range',
+            self::VALIDATOR_CLASS.'@validateIpRange',
+            'IP range is invalid'
+        );
+
     }
 
     /**

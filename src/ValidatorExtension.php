@@ -77,4 +77,27 @@ class ValidatorExtension
     {
         return preg_match('/^\d{5}-\d{3}$/', $value) === 1;
     }
+
+    public static function validateIpRange($attribute, $value, $parameters, $validator)
+    {
+        foreach (explode(',',$value) as $range) {
+            $ipSubnet = explode('/', $range);
+            $ipFromTo = explode('-', $range);
+            switch (2) {
+                case count($ipSubnet):
+                    if (ip2long($ipSubnet[0]) == false || intval($ipSubnet[1]) == 0) {
+                        return false;
+                    }
+                    break;
+                case count($ipFromTo):
+                    if (ip2long($ipFromTo[0]) == false || !ip2long($ipFromTo[1])) {
+                        return false;
+                    }
+                    break;
+                default:
+                    return false;
+            }
+        }
+        return true;
+    }
 }
