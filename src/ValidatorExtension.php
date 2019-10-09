@@ -22,8 +22,10 @@ class ValidatorExtension
 
     public static function validateCpf($attribute, $value, $parameters, $validator)
     {
-        if (preg_match('/^\d{3}\.\d{3}\.\d{3}-\d{2}$/', $value) !== 1) {
-            return false;
+        if ((isset($parameters[0]) && $parameters[0] === 'true') || !isset($parameters[0])) {
+            if (preg_match('/^\d{3}\.\d{3}\.\d{3}-\d{2}$/', $value) !== 1) {
+                return false;
+            }
         }
 
         $c = preg_replace('/\D/', '', $value);
@@ -43,8 +45,10 @@ class ValidatorExtension
 
     public static function validateCnpj($attribute, $value, $parameters, $validator)
     {
-        if (preg_match('/^\d{2}\.\d{3}\.\d{3}\/\d{4}-\d{2}$/', $value) !== 1) {
-            return false;
+        if ((isset($parameters[0]) && $parameters[0] === 'true') || !isset($parameters[0])) {
+            if (preg_match('/^\d{2}\.\d{3}\.\d{3}\/\d{4}-\d{2}$/', $value) !== 1) {
+                return false;
+            }
         }
 
         $c = preg_replace('/\D/', '', $value);
