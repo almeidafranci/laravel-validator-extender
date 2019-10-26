@@ -2,8 +2,8 @@
 
 namespace AlmeidaFranci\LaravelValidatorExtender;
 
-use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\ServiceProvider;
 
 class ValidatorExtenderServiceProvider extends ServiceProvider
 {
@@ -51,7 +51,6 @@ class ValidatorExtenderServiceProvider extends ServiceProvider
             self::VALIDATOR_CLASS.'@validateIpRange',
             'IP range is invalid'
         );
-
     }
 
     /**

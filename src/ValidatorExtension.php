@@ -40,6 +40,7 @@ class ValidatorExtension
         if ($c[10] != ((($n %= 11) < 2) ? 0 : 11 - $n)) {
             return false;
         }
+
         return true;
     }
 
@@ -69,6 +70,7 @@ class ValidatorExtension
         if ($c[13] != ((($n %= 11) < 2) ? 0 : 11 - $n)) {
             return false;
         }
+
         return true;
     }
 
@@ -84,7 +86,7 @@ class ValidatorExtension
 
     public static function validateIpRange($attribute, $value, $parameters, $validator)
     {
-        foreach (explode(',',$value) as $range) {
+        foreach (explode(',', $value) as $range) {
             $ipSubnet = explode('/', $range);
             $ipFromTo = explode('-', $range);
             switch (2) {
@@ -102,6 +104,7 @@ class ValidatorExtension
                     return false;
             }
         }
+
         return true;
     }
 }
