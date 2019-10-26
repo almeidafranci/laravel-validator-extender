@@ -22,7 +22,7 @@ class ValidatorExtension
 
     public static function validateCpf($attribute, $value, $parameters, $validator)
     {
-        if ((isset($parameters[0]) && $parameters[0] === 'true') || !isset($parameters[0])) {
+        if ((isset($parameters[0]) && $parameters[0] === 'true') || ! isset($parameters[0])) {
             if (preg_match('/^\d{3}\.\d{3}\.\d{3}-\d{2}$/', $value) !== 1) {
                 return false;
             }
@@ -46,7 +46,7 @@ class ValidatorExtension
 
     public static function validateCnpj($attribute, $value, $parameters, $validator)
     {
-        if ((isset($parameters[0]) && $parameters[0] === 'true') || !isset($parameters[0])) {
+        if ((isset($parameters[0]) && $parameters[0] === 'true') || ! isset($parameters[0])) {
             if (preg_match('/^\d{2}\.\d{3}\.\d{3}\/\d{4}-\d{2}$/', $value) !== 1) {
                 return false;
             }
@@ -96,7 +96,7 @@ class ValidatorExtension
                     }
                     break;
                 case count($ipFromTo):
-                    if (ip2long($ipFromTo[0]) == false || !ip2long($ipFromTo[1])) {
+                    if (ip2long($ipFromTo[0]) == false || ! ip2long($ipFromTo[1])) {
                         return false;
                     }
                     break;
