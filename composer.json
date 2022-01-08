@@ -3,7 +3,7 @@
     "description": "A laravel validator extender for commonly used rules.",
     "keywords": ["laravel", "laravel validator"],
     "require": {
-        "php": "^7.2",
+        "php": "^7.2|^8.0",
         "illuminate/support": "~5.5.0|~5.6.0|~5.7.0|~5.8.0|^6.0|^7.0|^8.0"
     },
     "license": "MIT",
